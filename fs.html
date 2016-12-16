@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Intro | Curso Node.js | IT Master</title>
+
+  <link rel="icon" sizes="32x32" type="image/png" href="img/favicon.png">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  </head>
+  <body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1><code>fs</code></h1>
+        <ul>
+          <li>Modulo para interactuar con el <i>File System</i>.</li>
+          <li><a href="https://en.wikipedia.org/wiki/POSIX">POSIX</a></li>
+          <li>Metodos sincronicos y asincronicos</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Leer Archivos</h2>
+        <script src="https://gist.github.com/ianaya89/dc31129c48902ffa8fd1f23140ceed09.js"></script>
+      </section>
+
+      <section>
+        <h2>Escribir Archivos</h2>
+        <script src="https://gist.github.com/ianaya89/e609114277c88fb3464b73859e3e19b9.js"></script>
+      </section>
+
+      <section>
+        <h2>Error First</h2>
+        <ul>
+          <li>Patron de diseño utilizado en Node.js y <i>callbacks</i>.</li>
+          <li>Primer parametro es siempre el un <code>error</code>.</li>
+          <li>Segundo parametro reservado para <i>success case</i>.</li>
+          <li>Cada <i>callback</i> debe manejar los errores.</li>
+        </ul>
+        <script src="https://gist.github.com/ianaya89/882f56bb78021bece4ea686cded3e8ce.js"></script>
+      </section>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    Reveal.initialize({
+    history: true,
+
+    dependencies: [
+      { src: 'plugin/markdown/marked.js' },
+      { src: 'plugin/markdown/markdown.js' },
+      { src: 'plugin/notes/notes.js', async: true },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+    ]
+    });
+  </script>
+  </body>
+</html>
