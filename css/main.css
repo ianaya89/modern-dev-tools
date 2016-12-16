@@ -1,11 +1,12 @@
 body {
-  background: #6B9E65;
+  background: #f3f3f3;
   font-family: 'Fira Sans', sans-serif;
 }
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 , .reveal h6 {
   text-transform: none;
   font-family: 'Fira Sans', sans-serif;
+  color: tomato;
 }
 
 .reveal a {
