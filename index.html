@@ -398,7 +398,7 @@
         <section>
           <h2><code class="black">webpack.config.js</code></h2>
           <pre>
-            <code style="max-height: 500px;">
+            <code style="max-height: 550px;">
               const webpack = require('webpack');
 
               module.exports = {
@@ -447,7 +447,7 @@
           </pre>
         </section>
 
-        <section data-background="img/magic.gif">
+        <section data-background="img/happy.gif">
           <h1 class="white">DEMO</h1>
         </section>
       </section>
@@ -492,6 +492,49 @@
       <section>
         <section>
           <h1>CI</h1>
+          <p>Integración Continua</p>
+        </section>
+
+        <section>
+          <h1>Circle CI</h1>
+          <ul>
+            <li>Integraciones automáticas</li>
+            <li>Delivery automático</li>
+            <li>Instalar dependencias, correr tests, generar informes, integrar con servicios de terceros.</li>
+            <li>Deploy rápido, reproducible y debuggeable</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><code class="black">circle.yml</code></h2>
+          <pre>
+            <code style="max-height: 550px">
+    machine:
+      timezone:
+        America/Vancouver
+      node:
+        version: 6
+
+    dependencies:
+      override:
+        - npm install
+        - npm install coveralls
+        - npm install bithound
+
+    test:
+      override:
+        - npm test
+        - COVERALLS_SERVICE_NAME="circleci" COVERALLS_SERVICE_JOB_ID="$CIRCLE_BUILD_NUM" ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info
+        - ./node_modules/.bin/bithound check git@github.com:ianaya89/luhn-cc.git
+      post:
+        - cp -R ./coverage/* $CIRCLE_ARTIFACTS/
+
+            </code>
+          </pre>
+        </section>
+
+        <section data-background="img/circle.png">
+
         </section>
       </section>
 
@@ -504,6 +547,7 @@
           <h2>Git Flow</h2>
           <ul>
             <li>Modelo de branch</li>
+            <li>Branch develop & master</li>
             <li>1 Funcionalidad = 1 Branch</li>
             <li>Release/s Branch</li>
             <li>Hot Fix Branch</li>
@@ -514,11 +558,24 @@
           <h2>Pull Requests</h2>
           <ul>
             <li>Visibilidad</li>
-            <li>Revision de Codigo</li>
+            <li>Revision de código</li>
             <li>Seguridad</li>
             <li>Aprendizaje</li>
           </ul>
         </section>
+
+        <section data-background="img/pr.png">
+
+        </section>
+      </section>
+
+      <section data-background="img/applause.gif">
+        <h1 class="white">Gracias! 👏</h1>
+        <h3><a href="http://twitter.com/ianaya89">@ianaya89</a></h3>
+      </section>
+
+      <section data-background="img/wait.gif">
+        <h1 class="white">Preguntas?</h1>
       </section>
     </div>
   </div>
