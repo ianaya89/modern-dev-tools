@@ -3,7 +3,7 @@ body {
   font-family: 'Fira Sans', sans-serif;
 }
 
-.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 , .reveal h6 {
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 , .reveal h6, .reveal p, .reveal ul li {
   text-transform: none;
   font-family: 'Fira Sans', sans-serif;
   color: tomato;
@@ -11,6 +11,14 @@ body {
 
 .reveal a {
   color: #333333;
+}
+
+.black {
+  color: #3d3d3d !important;
+}
+
+.white {
+  color: #f3f3f3 !important;
 }
 
 .reveal section img.logo {
