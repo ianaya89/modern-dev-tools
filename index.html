@@ -135,15 +135,8 @@
             <li>ConEmu</li>
             <li>GitBash</li>
             <li>Zsh</li>
+            <li>alias copy='cp'</li>
           </ul>
-        </section>
-
-        <section>
-          <h1>alias</h1>
-          <p>Reemplazar comandos o conjuntos de comandos por palabras simples</p>
-          <code class="black">
-            alias copy='cp'
-          </code>
         </section>
 
         <section data-background="img/demo.gif">
@@ -192,6 +185,35 @@
                   "space-infix-ops": 2,
                 }
               }
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1>EditorConfig</h1>
+          <ul>
+            <li>Consistencia de código entre editores</li>
+            <li>Estilos generales</li>
+            <li>Estilos por tipo de archivo</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><code class="black">.editorconfig</code></h2>
+          <pre>
+            <code>
+              root = true
+
+              [*]
+              indent_style = space
+              indent_size = 2
+              charset = utf-8
+              trim_trailing_whitespace = true
+              insert_final_newline = true
+
+              [*.md]
+              trim_trailing_whitespace = false
+
             </code>
           </pre>
         </section>
@@ -293,7 +315,7 @@
           </ul>
         </section>
 
-        <section data-background="img/magic.gif">
+        <section data-background="img/happy.gif">
           <h1><a href="http://codepen.io/ianaya89/pen/NbeLWJ" class="white">DEMO</a></h1>
         </section>
 
