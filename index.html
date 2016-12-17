@@ -259,6 +259,9 @@
           </ul>
         </section>
 
+        <section data-background="img/coveralls.png">
+        </section>
+
         <section data-background="img/demo.gif">
           <h1 class="white">DEMO</h1>
         </section>
@@ -303,14 +306,30 @@
         </section>
 
         <section>
-          <h2>babel</h2>
-          <p>Permite usar nuevas funcionalidades en ES6 en todo tipo de browsers.</p>
-          <p>Transforma el codigo en algo ES5 equivalente.</p>
+          <h1>Babel</h1>
           <ul>
-            <li>Facil configuracion</li>
+            <li>Nuevas funcionalidades en ES6 en todo tipo de browsers.</li>
+            <li>Transforma ES6 en codigo ES5 equivalente.</li>
             <li>Orientado a presets (modulos)</li>
-            <li><code>.babelrc</code></li>
           </ul>
+        </section>
+
+        <section>
+          <h2><code class="black">.babelrc</code></h2>
+          <pre>
+            <code>
+            {
+              "presets": ["es2015", "stage-1"],
+              "comments": false
+            }
+            </code>
+          </pre>
+        </section>
+
+        <section data-background="img/demo.gif">
+          <h1><a class="white" href="https://babeljs.io/repl/#?babili=false&evaluate=true&lineWrap=false&presets=es2015%2Creact%2Cstage-2&code=const%20hello%20%3D%20'Hola%2C%20'%3B%0A%0A()%20%3D%3E%20%7B%0A%20%20console.log(hello)%3B%0A%7D%0A%0Afunction%20add(x%20%3D%201%2C%20y%20%3D%203)%20%7B%0A%20%20return%20x%20%2B%20y%3B%0A%7D%0A%0Aconsole.log(%60%24%7Bhello%7D%20Mundo!%60)%3B">
+            DEMO
+          </a></h1>
         </section>
       </section>
 
@@ -321,24 +340,41 @@
 
         <section>
           <h1>npm</h1>
-          <p>Registro open source para manejar dependencias (node & browser)</p>
-          <p>Es el mas grande en cuanto a librerias.</p>
           <ul>
             <li>CLI</li>
+            <li>Registro Open Source</li>
+            <li>Mas grande del mundo 🙌</li>
+            <li>Node & Browser</li>
           </ul>
+        </section>
+
+        <section data-background="img/npm-stats.png">
         </section>
 
         <section>
           <h1>BitHound</h1>
-          <p>Servicio web para analizar librerias npm.</p>
-          <p>Detecta librerias obsoletas, desactualizadas e inseguras</p>
-          <p>Ayuda a prevenir <i>code-smells</i>, a refactorizar y trackear TODO's</p>
-          <p>Integracion a CI y GitHub</p>
+          <ul>
+            <li>Analizar dependencias de npm</li>
+            <li>Detecta obsolescencia, inseguridades, falta de uso, desactualizaciones</li>
+            <li>Ayuda a refactorizar codigo</li>
+            <li>Tracking de <i>TODO's</i></li>
+            <li>CI + GitHub ❤️</li>
+          </ul>
+        </section>
+
+        <section data-background="img/bithound.png">
         </section>
 
         <section>
           <h1>Greenkepper</h1>
-          <p>Acutalizaciones automaticas de nuestras dependencias.</p>
+          <ul>
+            <li>Monitoreo en tiempo real</li>
+            <li>Acutalizacion automatica de dependencias</li>
+            <li>GitHub</li>
+          </ul>
+        </section>
+
+        <section data-background="img/greenkeeper.png">
         </section>
       </section>
 
@@ -348,25 +384,108 @@
         </section>
 
         <section>
-          <h2>webpack</h2>
-          <p>Agrupa dedendencias y modulos creand archivos estaticos para el browsers</p>
+          <h1>Webpack</h1>
           <ul>
-            <li>
-              Basado en loaders
-            </li>
-            <li>Hot Replacemente</li>
-            <li>Babel, Sass, Pug</li>
+            <li>Agrupa dependencias/modulos y crear archivos estaticos</li>
+            <li>Basado en loaders</li>
+            <li>Hot Replacement</li>
+            <li>Dev Web Server</li>
+            <li>Fonts, Svg, Imagenes</li>
+            <li>Babel, Sass, Pug, Karma, npm</li>
           </ul>
+        </section>
+
+        <section>
+          <h2><code class="black">webpack.config.js</code></h2>
+          <pre>
+            <code style="max-height: 500px;">
+              const webpack = require('webpack');
+
+              module.exports = {
+                entry: './src/index.js',
+
+                output: {
+                  path: './dist',
+                  filename: 'lib.js'
+                },
+
+                resolve: { root: path.resolve('./') },
+
+                module: {
+                  preLoaders: [{
+                    test   : /\.js$/,
+                    loader : 'eslint',
+                    include: projectRoot,
+                    exclude: /node_modules/
+                  }],
+                  loaders: [
+                    {
+                      test: /\.(woff|ttf|eot|svg)$/,
+                      loader: 'url?limit=64000'
+                    },
+                    {
+                      test: /\.(png|jpg)$/,
+                      loader: 'url?limit=64000'
+                    },
+                    {
+                      test   : /\.js$/,
+                      exclude: /node_modules/,
+                      loader : 'babel'
+                    },
+                    {
+                      test  : /\.css$/,
+                      loader: 'style-loader!css-loader?root=./src/'
+                    },
+                    {
+                      test  : /\.scss$/,
+                      loader: 'style!css!sass'
+                    }
+                  ]
+                },
+              };
+            </code>
+          </pre>
+        </section>
+
+        <section data-background="img/magic.gif">
+          <h1 class="white">DEMO</h1>
         </section>
       </section>
 
       <section>
         <section>
-          <h1>Automatizacion</h1>
+          <h1>Automatización</h1>
         </section>
 
         <section>
-          <h2>npm scripts</h2>
+          <h1>npm scripts</h1>
+          <ul>
+            <li>Comandos definidos en <code class="black">package.json</code></li>
+            <li>Pequeñas utilidades</li>
+            <li>Grandes sistemas de build</li>
+            <li><code class="black">npm run [script]</code></li>
+            <li>Evitamos el uso de dependencias globales</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><code class="black">package.json</code></h2>
+          <pre>
+            <code>
+      "name": "luhn-cc",
+      "version": "0.0.6",
+      "scripts": {
+        "build": "webpack --mode=build",
+        "dev": "webpack --progress --colors --watch --mode=dev",
+        "test": "karma start karma.conf.js --single-run",
+        "test-watch": "karma start karma.conf.js --auto-watch",
+        "check-cover": "open coverage/lcov-report/index.html",
+        "eslint": "eslint . .js",
+        "prepublish": "npm run build",
+        "bithound": "bithound check git@github.com:ianaya89/luhn-cc.git"
+      },
+            </code>
+          </pre>
         </section>
       </section>
 
